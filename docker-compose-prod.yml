@@ -1,0 +1,6 @@
+version: '3'
+services:  # difined services
+  node-app: # services name
+    environment:
+      - NODE_ENV=production
+    

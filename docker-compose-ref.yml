@@ -3,7 +3,12 @@ services:  # difined services
   node-app: # services name
     container_name: express-node-app-container # container name
     build: . # build from the dockerfile in the current directory
+    volumes:  # miunt volumes
+      - ./src:/app/src:ro # the src directory is mounted as read-only
     ports:  # expose ports
       - "4000:4000" # map port 4000 of the container to port 4000 on the host
+    #enviroment: # environment variables
+      - PORT=4000
+      - NODE_ENV=development
     env_file: # load environment variables from a file
       - ./.env

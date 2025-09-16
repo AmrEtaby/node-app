@@ -1,0 +1,8 @@
+version: '3'
+services:  # difined services
+  node-app: # services name
+    volumes:  # miunt volumes
+      - ./src:/app/src:ro # the src directory is mounted as read-only
+    enviroment: # environment variables
+      - NODE_ENV=development
+    
